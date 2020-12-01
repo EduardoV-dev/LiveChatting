@@ -1,0 +1,57 @@
+$colors: (
+  primary: #e76f51,
+  accent: #6c63ff,
+);
+
+@function colors($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+@mixin font(
+  $font-name,
+  $font-size: 1em,
+  $font-color: #000,
+  $font-weight: regular
+) {
+  font-family: $font-name, Arial, Helvetica, sans-serif;
+  font-size: $font-size;
+  color: $font-color;
+  font-weight: $font-weight;
+}
+
+@mixin tablet {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin tabletSize {
+  width: 95%;
+  margin: 0 auto;
+}
+
+@mixin desktopSize() {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 0 1em;
+  min-height: 100vh;
+  background-color: colors(primary);
+}

@@ -1,0 +1,56 @@
+&__info {
+  width: 100%;
+  height: auto;
+
+  @include tablet {
+    grid-area: info;
+    width: 100%;
+  }
+}
+
+&__title {
+  @include font(Fugaz One, 1.5em);
+  line-height: 1.2;
+  text-align: center;
+  margin-bottom: 0.5em;
+
+  @include tablet {
+    text-align: left;
+  }
+}
+
+&__subtitle {
+  width: 80%;
+  margin: 0 auto;
+  @include font(Fugaz One, 1em, rgba(#000, 0.5));
+  line-height: 1.3;
+  text-align: center;
+
+  @include tablet {
+    text-align: left;
+    margin: 0;
+  }
+}
+
+&__cover {
+  position: relative;
+}
+
+&__cover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: colors(primary);
+  transform-origin: 0% 0%;
+}
+
+&__form--info {
+  @include tablet {
+    text-align: left;
+    display: block !important;
+    margin-top: 2em;
+  }
+}

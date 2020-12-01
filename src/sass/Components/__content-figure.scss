@@ -1,0 +1,52 @@
+&__figure {
+  width: 100%;
+  margin-bottom: 2em;
+
+  @include tablet {
+    grid-area: figure;
+  }
+
+  @include desktop {
+    width: 45em !important;
+  }
+
+  @media screen and (min-width: 576px) {
+    width: 35em;
+    margin: 0 auto;
+  }
+}
+
+&__img {
+  width: 100%;
+  object-fit: cover;
+
+  @include desktop {
+    transform: translateX(-20%) !important;
+  }
+
+  @media screen and (min-width: 900px) {
+    transform: translateX(0);
+  }
+}
+
+&__form {
+  text-align: center;
+
+  &--info {
+    display: none;
+  }
+
+  @include tablet {
+    display: none;
+  }
+}
+
+&__submit {
+  padding: 0.5em 2em;
+  background-color: colors(accent);
+  @include font(Fugaz One, 1em, #fff);
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  cursor: pointer;
+}

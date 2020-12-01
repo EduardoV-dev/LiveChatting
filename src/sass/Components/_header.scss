@@ -1,0 +1,113 @@
+.header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 3em;
+  overflow-x: hidden;
+
+  @include tablet {
+    @include tabletSize();
+  }
+
+  @include desktop {
+    @include desktopSize();
+  }
+
+  &__logo {
+    @include font(Fugaz One);
+    text-decoration: none;
+  }
+
+  &__menu {
+    font-size: 2em;
+    text-decoration: none;
+    color: #000;
+    outline: none;
+    padding-top: 0.1em;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__nav {
+    display: none;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    background-color: rgb(36, 32, 32);
+
+    @include tablet {
+      display: flex;
+      position: relative;
+      top: 0;
+      right: 0;
+      left: 0;
+      width: auto;
+      height: auto;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1;
+      background-color: transparent;
+    }
+  }
+
+  &__item {
+    @include font(PT Serif Caption, 1.5em, #fff);
+    text-decoration: none;
+    padding: 1em;
+    transition: all 0.3s ease-out;
+    display: block;
+    width: calc(100% - 2em);
+    text-align: center;
+    outline: none;
+
+    &:hover {
+      background-color: rgb(48, 42, 42);
+    }
+
+    &:active {
+      border: 1px solid rgb(65, 55, 55);
+    }
+
+    @include tablet {
+      display: inline-block;
+      width: auto;
+      position: relative;
+      color: #000;
+      font-size: 1em;
+
+      &::before {
+        display: block;
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 3px;
+        background-color: rgb(216, 216, 216);
+        transition: all 0.3s ease-in;
+      }
+
+      &:hover {
+        background-color: transparent;
+      }
+
+      &:hover::before {
+        width: 100%;
+      }
+
+      &:active {
+        border: none;
+      }
+    }
+  }
+}

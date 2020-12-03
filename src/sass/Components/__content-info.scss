@@ -14,8 +14,14 @@
   text-align: center;
   margin-bottom: 0.5em;
 
+  @include desktop {
+    font-size: 40px;
+    width: 10em !important;
+  }
+
   @include tablet {
     text-align: left;
+    width: 14em;
   }
 }
 
@@ -29,6 +35,12 @@
   @include tablet {
     text-align: left;
     margin: 0;
+    width: 17em !important;
+  }
+
+  @include desktop {
+    width: 100%;
+    font-size: 20px;
   }
 }
 

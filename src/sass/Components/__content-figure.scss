@@ -20,9 +20,9 @@
   width: 100%;
   object-fit: cover;
 
-  @include desktop {
-    transform: translateX(-20%) !important;
-  }
+  // @include desktop {
+  //   transform: translateX(-20%) !important;
+  // }
 
   @media screen and (min-width: 900px) {
     transform: translateX(0);
